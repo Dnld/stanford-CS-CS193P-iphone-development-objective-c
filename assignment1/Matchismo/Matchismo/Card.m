@@ -17,7 +17,7 @@
 @implementation Card
 
 
-// instance method to provide a score for how good a match is
+// instance method to provide a score for quality of a match
 // will retrun 1 if cards match
 - (int)matched:(NSArray*)otherCards
 {

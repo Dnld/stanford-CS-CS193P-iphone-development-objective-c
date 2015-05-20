@@ -15,6 +15,7 @@
 		6A4688651B0CF51B0023FAAF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6A4688631B0CF51B0023FAAF /* LaunchScreen.xib */; };
 		6A4688711B0CF51B0023FAAF /* MatchismoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A4688701B0CF51B0023FAAF /* MatchismoTests.m */; };
 		6A46887C1B0CF6280023FAAF /* Card.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46887B1B0CF6280023FAAF /* Card.m */; };
+		6A46887F1B0D040C0023FAAF /* Deck.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A46887E1B0D040C0023FAAF /* Deck.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,8 @@
 		6A4688701B0CF51B0023FAAF /* MatchismoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MatchismoTests.m; sourceTree = "<group>"; };
 		6A46887A1B0CF6280023FAAF /* Card.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Card.h; sourceTree = "<group>"; };
 		6A46887B1B0CF6280023FAAF /* Card.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Card.m; sourceTree = "<group>"; };
+		6A46887D1B0D040C0023FAAF /* Deck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Deck.h; sourceTree = "<group>"; };
+		6A46887E1B0D040C0023FAAF /* Deck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Deck.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +92,8 @@
 				6A46885B1B0CF51B0023FAAF /* ViewController.h */,
 				6A46887A1B0CF6280023FAAF /* Card.h */,
 				6A46887B1B0CF6280023FAAF /* Card.m */,
+				6A46887D1B0D040C0023FAAF /* Deck.h */,
+				6A46887E1B0D040C0023FAAF /* Deck.m */,
 				6A46885C1B0CF51B0023FAAF /* ViewController.m */,
 				6A46885E1B0CF51B0023FAAF /* Main.storyboard */,
 				6A4688611B0CF51B0023FAAF /* Images.xcassets */,
@@ -224,6 +229,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A46887F1B0D040C0023FAAF /* Deck.m in Sources */,
 				6A46885D1B0CF51B0023FAAF /* ViewController.m in Sources */,
 				6A46885A1B0CF51B0023FAAF /* AppDelegate.m in Sources */,
 				6A4688571B0CF51B0023FAAF /* main.m in Sources */,
