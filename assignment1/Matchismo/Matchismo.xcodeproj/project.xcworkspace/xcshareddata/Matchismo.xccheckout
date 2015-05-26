@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>8188A432-1512-47A0-B7B3-2227C04B59A2</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>Matchismo</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>EFC78FFFCF0ED7B289C991CF2F6CD663156F3E3C</key>
 		<string>github.com:Dnld/stanford-CS-CS193P-iphone-development-objective-c.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>assignment1/Matchismo/Matchismo.xcodeproj/project.xcworkspace</string>
+	<string>assignment1/Matchismo/Matchismo.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>EFC78FFFCF0ED7B289C991CF2F6CD663156F3E3C</key>
