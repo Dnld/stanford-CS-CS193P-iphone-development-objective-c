@@ -97,14 +97,7 @@
 				6A4688591B0CF51B0023FAAF /* AppDelegate.m */,
 				6A46885B1B0CF51B0023FAAF /* ViewController.h */,
 				6A46885C1B0CF51B0023FAAF /* ViewController.m */,
-				6A46887A1B0CF6280023FAAF /* Card.h */,
-				6A46887B1B0CF6280023FAAF /* Card.m */,
-				6A4688801B0D099D0023FAAF /* PlayingCard.h */,
-				6A4688811B0D099D0023FAAF /* PlayingCard.m */,
-				6A46887D1B0D040C0023FAAF /* Deck.h */,
-				6A46887E1B0D040C0023FAAF /* Deck.m */,
-				6AE08A811B14E23900AD8AB1 /* PlayingCardDeck.h */,
-				6AE08A821B14E23900AD8AB1 /* PlayingCardDeck.m */,
+				6AE08A841B1534B200AD8AB1 /* Model */,
 				6A46885E1B0CF51B0023FAAF /* Main.storyboard */,
 				6A4688611B0CF51B0023FAAF /* Images.xcassets */,
 				6A4688631B0CF51B0023FAAF /* LaunchScreen.xib */,
@@ -137,6 +130,21 @@
 				6A46886F1B0CF51B0023FAAF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		6AE08A841B1534B200AD8AB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				6A46887A1B0CF6280023FAAF /* Card.h */,
+				6A46887B1B0CF6280023FAAF /* Card.m */,
+				6A4688801B0D099D0023FAAF /* PlayingCard.h */,
+				6A4688811B0D099D0023FAAF /* PlayingCard.m */,
+				6A46887D1B0D040C0023FAAF /* Deck.h */,
+				6A46887E1B0D040C0023FAAF /* Deck.m */,
+				6AE08A811B14E23900AD8AB1 /* PlayingCardDeck.h */,
+				6AE08A821B14E23900AD8AB1 /* PlayingCardDeck.m */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

@@ -27,17 +27,30 @@
                                     <action selector="touchCardButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="IMg-he-n5f"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Flips: 0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xq4-fb-uqj">
+                                <rect key="frame" x="16" y="539" width="288" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="fyc-6Z-at5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="szQ-Gl-4cv" firstAttribute="centerX" secondItem="kh9-bI-dsS" secondAttribute="centerX" id="7rM-o9-kO0"/>
                             <constraint firstItem="szQ-Gl-4cv" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="REN-XK-emW"/>
+                            <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="xq4-fb-uqj" secondAttribute="bottom" constant="8" id="iHo-2L-Vlr"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="flipsLabel" destination="xq4-fb-uqj" id="FxV-92-UgH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="324.80000000000001" y="431.68000000000001"/>
+            <point key="canvasLocation" x="324" y="431"/>
         </scene>
     </scenes>
     <resources>
