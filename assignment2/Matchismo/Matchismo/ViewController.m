@@ -15,7 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *flipsLabel;
 @property (nonatomic) int flipCount;
 @property (nonatomic) Card *currentCard;
-@property (nonatomic) PlayingCardDeck *deck;
+@property (strong, nonatomic) Deck *deck;
 
 @end
 
@@ -27,19 +27,27 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
+// lazy instantiation for deck
+- (Deck *)deck
+{
+    if (!_deck) _deck = [self createDeck];
+    return _deck;
+}
+
+- (Deck *)createDeck
+{
+    return [[PlayingCardDeck alloc] init];
+}
+
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    
-    if (!self.deck) {
-        _deck = [[PlayingCardDeck alloc] init];
-    }
     
     if ([sender.currentTitle length]) {
         if (self.currentCard) {
             [self.deck addCard:self.currentCard];
         }
         [sender setBackgroundImage:[UIImage imageNamed:@"cardback"]
-                      forState:UIControlStateNormal];
+                          forState:UIControlStateNormal];
         [sender setTitle:@"" forState:UIControlStateNormal];
     } else {
         self.currentCard = [self.deck drawRandomCard];
