@@ -19,7 +19,7 @@
 
 // instance method to provide a score for quality of a match
 // will retrun 1 if cards match
-- (int)matched:(NSArray*)otherCards
+- (int)match:(NSArray*)otherCards
 {
     int score = 0;
     
