@@ -45,7 +45,7 @@
         self.currentCard = [self.deck drawRandomCard];
         [sender setBackgroundImage:[UIImage imageNamed:@"cardfront"]
                           forState:UIControlStateNormal];
-        [sender setTitle:[NSString stringWithString:self.currentCard.contents] forState:UIControlStateNormal];
+        [sender setTitle:self.currentCard.contents forState:UIControlStateNormal];
     }
     self.flipCount++;
     
