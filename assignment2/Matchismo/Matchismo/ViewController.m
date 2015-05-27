@@ -27,15 +27,12 @@
     self.flipsLabel.text = [NSString stringWithFormat:@"Flips: %d", self.flipCount];
 }
 
-// lazy instantiation for deck
-- (void)deck
-{
-    if (!_deck) _deck = [[PlayingCard alloc] init];
-    return _deck;
-}
-
 - (IBAction)touchCardButton:(UIButton *)sender
 {
+    
+    if (!self.deck) {
+        _deck = [[PlayingCardDeck alloc] init];
+    }
     
     if ([sender.currentTitle length]) {
         if (self.currentCard) {
