@@ -17,7 +17,6 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 
-
 @end
 
 @implementation ViewController
@@ -65,4 +64,26 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
+- (IBAction)touchReDealButton:(UIButton *)sender
+{
+    self.scoreLabel.text = @"Score: 0";
+    for (UIButton *cardButton in self.cardButtons) {
+        [cardButton setTitle:@"" forState:UIControlStateNormal];
+        [cardButton setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
+    }
+    self.game = nil;
+}
+
 @end
+
+
+
+
+
+
+
+
+
+
+
+
