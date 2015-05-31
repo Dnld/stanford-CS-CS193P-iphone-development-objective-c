@@ -17,6 +17,8 @@
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
+@property (strong, nonatomic) IBOutlet UILabel *displayResult;
+
 
 @end
 
@@ -54,6 +56,25 @@
         cardButton.enabled = !card.isMatched;
         self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
     }
+    if (self.game.choicesAndResult) {
+        
+        if ([[self.game.choicesAndResult lastObject] intValue] < 0) {
+            if ([[self.game.choicesAndResult firstObject] count] == 3) {
+                self.displayResult.text = [NSString stringWithFormat:@"None match, %@ point penalty", [self.game.choicesAndResult lastObject]];
+            } else {
+                Card *firstCard = [[self.game.choicesAndResult firstObject] firstObject];
+                Card *secondCard = [[self.game.choicesAndResult firstObject] lastObject];
+                self.displayResult.text = [NSString stringWithFormat:@"%@ and %@ don't match, %@ point penalty", firstCard.contents, secondCard.contents, [self.game.choicesAndResult lastObject]];
+            }
+        } else if ([[self.game.choicesAndResult lastObject] intValue] > 0) {
+            Card *firstCard = [[self.game.choicesAndResult firstObject] firstObject];
+            Card *secondCard = [[self.game.choicesAndResult firstObject] lastObject];
+            self.displayResult.text = [NSString stringWithFormat:@"%@ and %@ match, %@ points", firstCard.contents, secondCard.contents, [self.game.choicesAndResult lastObject]];
+        } else {
+            Card *onlyCard = [[self.game.choicesAndResult firstObject] firstObject];
+            self.displayResult.text = [NSString stringWithFormat:@"You chose %@, 0 points", onlyCard.contents];
+        }
+    }
 }
 
 - (NSString *)titleForCard:(Card *)card
@@ -75,6 +96,8 @@
         cardButton.enabled = YES;
     }
     self.game = nil;
+    self.threeCardMatchMode.on = YES;
+    self.displayResult.text = @"";
 }
 
 @end

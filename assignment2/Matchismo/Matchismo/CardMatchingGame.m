@@ -11,6 +11,7 @@
 @interface CardMatchingGame()
 
 @property (nonatomic, readwrite) NSInteger score;
+@property (nonatomic, readwrite) NSMutableArray *choicesAndResult;
 @property (nonatomic, strong) NSMutableArray *cards; // of Card
 
 @end
@@ -48,7 +49,7 @@
     return (index < [self.cards count]) ? self.cards[index] : nil;
 }
 
-static const int MISMATCH_PENALTY = 2;
+static const int MISMATCH_PENALTY = 1;
 static const int MATCH_BONUS = 4;
 static const int COST_TO_CHOOOSE = 1;
 
@@ -60,6 +61,7 @@ static const int COST_TO_CHOOOSE = 1;
     if (!card.isMatched) {
         if (card.isChosen) {
             card.chosen = NO;
+            self.choicesAndResult = @[@[card], [NSNumber numberWithInt:0]];
         } else {
             // match card against other chosen card
             if (!mode) {
@@ -70,9 +72,11 @@ static const int COST_TO_CHOOOSE = 1;
                             self.score += matchScore * MATCH_BONUS;
                             otherCard.matched = YES;
                             card.matched = YES;
+                            self.choicesAndResult = @[@[card, otherCard], [NSNumber numberWithInt:matchScore * MATCH_BONUS]];
                         } else {
                             self.score -= MISMATCH_PENALTY;
                             otherCard.chosen = NO;
+                            self.choicesAndResult = @[@[card, otherCard], [NSNumber numberWithInt:-MISMATCH_PENALTY]];
                         }
                         break;
                     }
@@ -94,8 +98,10 @@ static const int COST_TO_CHOOOSE = 1;
                             otherCard.matched = YES;
                         }
                         card.matched = YES;
+                        self.choicesAndResult = @[@[card, firstMatchScore >= secondMatchScore ? chosenCards[0] : chosenCards[1]], [NSNumber numberWithInt:matchScore * MATCH_BONUS]];
                     } else {
                         self.score -= MISMATCH_PENALTY;
+                        self.choicesAndResult = @[@[card, chosenCards[0], chosenCards[1]], [NSNumber numberWithInt:-MISMATCH_PENALTY - COST_TO_CHOOOSE]];
                         for (Card *otherCard in chosenCards) {
                             otherCard.chosen = NO;
                         }
@@ -105,6 +111,7 @@ static const int COST_TO_CHOOOSE = 1;
             self.score -= COST_TO_CHOOOSE;
             card.chosen = YES;
         }
+        
     }
 }
 

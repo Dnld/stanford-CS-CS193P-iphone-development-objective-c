@@ -166,24 +166,32 @@
                                 </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-IY-5pc">
-                                <rect key="frame" x="198" y="454" width="51" height="31"/>
+                                <rect key="frame" x="198" y="465" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Match 3 Cards" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZK-Mf-K12">
-                                <rect key="frame" x="74" y="459" width="116" height="21"/>
+                                <rect key="frame" x="74" y="470" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-0g-jPo">
+                                <rect key="frame" x="20" y="429" width="280" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="LZK-Mf-K12" secondAttribute="bottom" constant="13" id="0os-Pq-G7d"/>
-                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="asN-IY-5pc" secondAttribute="bottom" constant="8" id="5Hj-5A-ctb"/>
+                            <constraint firstItem="45z-68-uRg" firstAttribute="top" secondItem="QaA-Ou-mjm" secondAttribute="bottom" constant="16" id="H3J-Fs-zs5"/>
                             <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="45z-68-uRg" secondAttribute="bottom" constant="8" id="RtT-XM-vOD"/>
-                            <constraint firstItem="45z-68-uRg" firstAttribute="top" secondItem="QaA-Ou-mjm" secondAttribute="bottom" constant="16" id="ng2-nu-weL"/>
+                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="LZK-Mf-K12" secondAttribute="bottom" constant="2" id="gir-aF-iDE"/>
+                            <constraint firstItem="asN-IY-5pc" firstAttribute="top" secondItem="DuZ-0g-jPo" secondAttribute="bottom" constant="15" id="pBx-I2-Qkm"/>
+                            <constraint firstItem="45z-68-uRg" firstAttribute="top" secondItem="asN-IY-5pc" secondAttribute="bottom" constant="43" id="uzw-xy-dus"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="displayResult" destination="DuZ-0g-jPo" id="MDP-Tu-a5k"/>
                         <outlet property="scoreLabel" destination="45z-68-uRg" id="NAd-on-t7Q"/>
                         <outlet property="threeCardMatchMode" destination="asN-IY-5pc" id="qmA-sM-jmZ"/>
                         <outletCollection property="cardButtons" destination="mFp-jY-R7R" id="0kL-02-7PG"/>
