@@ -154,8 +154,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaA-Ou-mjm">
-                                <rect key="frame" x="189" y="374" width="111" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QaA-Ou-mjm">
+                                <rect key="frame" x="105" y="493" width="111" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Re-deal Cards">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,14 +165,27 @@
                                     <action selector="touchReDealButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zyq-iq-yJm"/>
                                 </connections>
                             </button>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-IY-5pc">
+                                <rect key="frame" x="198" y="454" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Match 3 Cards" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZK-Mf-K12">
+                                <rect key="frame" x="74" y="459" width="116" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.50196081399917603" blue="0.25098040699958801" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="LZK-Mf-K12" secondAttribute="bottom" constant="13" id="0os-Pq-G7d"/>
+                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="asN-IY-5pc" secondAttribute="bottom" constant="8" id="5Hj-5A-ctb"/>
                             <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="45z-68-uRg" secondAttribute="bottom" constant="8" id="RtT-XM-vOD"/>
+                            <constraint firstItem="45z-68-uRg" firstAttribute="top" secondItem="QaA-Ou-mjm" secondAttribute="bottom" constant="16" id="ng2-nu-weL"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="scoreLabel" destination="45z-68-uRg" id="NAd-on-t7Q"/>
+                        <outlet property="threeCardMatchMode" destination="asN-IY-5pc" id="qmA-sM-jmZ"/>
                         <outletCollection property="cardButtons" destination="mFp-jY-R7R" id="0kL-02-7PG"/>
                         <outletCollection property="cardButtons" destination="dNB-Ym-CMN" id="KOt-ex-VMS"/>
                         <outletCollection property="cardButtons" destination="jQa-sn-cov" id="Hd4-1W-okV"/>

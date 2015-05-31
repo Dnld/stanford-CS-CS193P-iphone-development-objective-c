@@ -18,7 +18,8 @@
 - (instancetype)initWithCardCount:(NSUInteger)count
                         usingDeck:(Deck *)deck;
 
-- (void)chooseCardAtIndex:(NSUInteger)index;
+- (void)chooseCardAtIndex:(NSUInteger)index
+   withThreeCardMatchMode:(BOOL)mode;
 - (Card *)cardAtIndex:(NSUInteger)index;
 
 @end

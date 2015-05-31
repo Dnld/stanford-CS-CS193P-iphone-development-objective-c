@@ -16,6 +16,7 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
+@property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
 
 @end
 
@@ -31,6 +32,7 @@
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
+        self.threeCardMatchMode.on = NO;
     }
     return _game;
 }
@@ -38,7 +40,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:chosenButtonIndex];
+    [self.game chooseCardAtIndex:chosenButtonIndex withThreeCardMatchMode:self.threeCardMatchMode.isOn];
     [self updateUI];
 }
 
@@ -70,6 +72,7 @@
     for (UIButton *cardButton in self.cardButtons) {
         [cardButton setTitle:@"" forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[UIImage imageNamed:@"cardback"] forState:UIControlStateNormal];
+        cardButton.enabled = YES;
     }
     self.game = nil;
 }
