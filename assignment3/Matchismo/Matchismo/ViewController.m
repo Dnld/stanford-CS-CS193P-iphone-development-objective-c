@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
 @property (strong, nonatomic) IBOutlet UILabel *displayResult;
 @property (strong, nonatomic) NSMutableArray *resultsLog;
+@property (strong, nonatomic) IBOutlet UISlider *rewindSlider;
 
 
 @end
@@ -85,7 +86,8 @@
         }
         [self.resultsLog addObject:self.displayResult.text];
         self.game.choicesAndResult = nil;
-        NSLog(@"%@", [self.resultsLog lastObject]);
+        self.rewindSlider.maximumValue = [self.resultsLog count];
+        self.rewindSlider.value = self.rewindSlider.maximumValue;
     }
 }
 
@@ -99,6 +101,10 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
+- (IBAction)touchRewindSlider:(id)sender
+{
+}
+
 - (IBAction)touchReDealButton:(UIButton *)sender
 {
     self.scoreLabel.text = @"Score: 0";
@@ -108,7 +114,9 @@
         cardButton.enabled = YES;
     }
     self.game = nil;
+    self.resultsLog = nil;
     self.threeCardMatchMode.on = YES;
+    self.rewindSlider.value = 0;
     self.displayResult.text = @"";
 }
 
