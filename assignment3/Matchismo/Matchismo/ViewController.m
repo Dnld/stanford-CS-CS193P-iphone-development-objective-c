@@ -15,7 +15,6 @@
 @property (strong, nonatomic) CardMatchingGame *game;
 @property (strong, nonatomic) IBOutletCollection(UIButton) NSArray *cardButtons;
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
-@property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
 @property (strong, nonatomic) IBOutlet UILabel *displayResult;
 @property (strong, nonatomic) NSMutableArray *resultsLog;
 @property (strong, nonatomic) IBOutlet UISlider *rewindSlider;
@@ -35,7 +34,6 @@
     if (!_game) {
         _game = [[CardMatchingGame alloc] initWithCardCount:[self.cardButtons count]
                                                   usingDeck:[self createDeck]];
-        self.threeCardMatchMode.on = NO;
     }
     return _game;
 }
@@ -51,7 +49,7 @@
 - (IBAction)touchCardButton:(UIButton *)sender
 {
     int chosenButtonIndex = (int)[self.cardButtons indexOfObject:sender];
-    [self.game chooseCardAtIndex:chosenButtonIndex withThreeCardMatchMode:self.threeCardMatchMode.isOn];
+    [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
 }
 
@@ -118,7 +116,6 @@
     }
     self.game = nil;
     self.resultsLog = nil;
-    self.threeCardMatchMode.on = YES;
     self.rewindSlider.value = 0;
     self.displayResult.text = @"";
 }

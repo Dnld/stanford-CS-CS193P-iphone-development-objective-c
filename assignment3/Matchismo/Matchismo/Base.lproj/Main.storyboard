@@ -35,15 +35,6 @@
                                     <action selector="touchReDealButton:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="Zyq-iq-yJm"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="asN-IY-5pc">
-                                <rect key="frame" x="248" y="500" width="51" height="31"/>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Match 3 Cards" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LZK-Mf-K12">
-                                <rect key="frame" x="124" y="505" width="116" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="XXXXXXXXXXXXX" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-0g-jPo">
                                 <rect key="frame" x="18" y="360" width="284" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -418,7 +409,6 @@
                             <constraint firstItem="KqG-Jz-zuU" firstAttribute="top" secondItem="BAB-QV-3Xc" secondAttribute="bottom" constant="2" id="8dd-BI-ggS"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="LKy-g7-tcS" secondAttribute="height" id="8wa-yL-WqP"/>
                             <constraint firstItem="fIZ-Cq-MhV" firstAttribute="top" secondItem="zYf-vS-Xpe" secondAttribute="bottom" id="A07-XJ-yX0"/>
-                            <constraint firstItem="asN-IY-5pc" firstAttribute="leading" secondItem="LZK-Mf-K12" secondAttribute="trailing" constant="8" id="BQC-Z1-Puw"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="WsT-fh-60f" secondAttribute="width" id="Bi7-uf-8Zp"/>
                             <constraint firstItem="45z-68-uRg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="BoM-1q-q2M"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="KqG-Jz-zuU" secondAttribute="width" id="C1t-cA-svo"/>
@@ -441,7 +431,6 @@
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="l31-fl-wcc" secondAttribute="width" id="H5S-N8-amF"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="XiA-0J-9F2" secondAttribute="height" multiplier="2:3" id="I4A-1x-VhF"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="kap-IK-zi1" secondAttribute="height" id="Inb-zd-JsL"/>
-                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="asN-IY-5pc" secondAttribute="bottom" constant="3" id="JVy-mX-gto"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="Bdj-oN-xeW" secondAttribute="width" id="JjS-Wm-tpE"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="gme-Aw-xPo" secondAttribute="height" id="JwY-QR-GWp"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="BAB-QV-3Xc" secondAttribute="height" multiplier="2:3" id="K9p-gC-yym"/>
@@ -470,7 +459,6 @@
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="BAB-QV-3Xc" secondAttribute="height" id="S8K-OR-fvA"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="RdX-5k-Yl6" secondAttribute="width" id="SbC-hC-ZJx"/>
                             <constraint firstItem="Fbf-rZ-INI" firstAttribute="top" secondItem="GFV-ZZ-PDo" secondAttribute="bottom" constant="50" id="SnY-wL-wbG"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="asN-IY-5pc" secondAttribute="trailing" constant="7" id="TNg-Hx-Aht"/>
                             <constraint firstItem="BAB-QV-3Xc" firstAttribute="top" secondItem="ybj-ka-7hC" secondAttribute="bottom" constant="2" id="TeH-Ts-BZC"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="fIZ-Cq-MhV" secondAttribute="height" id="U7V-Ex-yQt"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="height" secondItem="WsT-fh-60f" secondAttribute="height" id="V8Z-et-XRV"/>
@@ -542,7 +530,6 @@
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="oms-Vq-8mj" secondAttribute="height" multiplier="2:3" id="sn9-v6-dxw"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="RdX-5k-Yl6" secondAttribute="height" multiplier="2:3" id="spd-5u-bNU"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="GFV-ZZ-PDo" secondAttribute="height" multiplier="2:3" id="t1m-w3-DJc"/>
-                            <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="LZK-Mf-K12" secondAttribute="bottom" constant="8" id="tLd-EC-llJ"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="a8F-nK-Wfr" secondAttribute="height" multiplier="2:3" id="teu-8K-wjF"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="q3h-Ha-UEL" secondAttribute="height" multiplier="2:3" id="u0B-Am-lU7"/>
                             <constraint firstItem="VYP-aS-M5F" firstAttribute="width" secondItem="ybj-ka-7hC" secondAttribute="height" multiplier="2:3" id="uIL-xT-6AI"/>
@@ -570,7 +557,6 @@
                         <outlet property="displayResult" destination="DuZ-0g-jPo" id="MDP-Tu-a5k"/>
                         <outlet property="rewindSlider" destination="Fbf-rZ-INI" id="XUK-C8-n8Y"/>
                         <outlet property="scoreLabel" destination="45z-68-uRg" id="NAd-on-t7Q"/>
-                        <outlet property="threeCardMatchMode" destination="asN-IY-5pc" id="qmA-sM-jmZ"/>
                         <outletCollection property="cardButtons" destination="eys-EZ-dzg" id="HVJ-rr-ki4"/>
                         <outletCollection property="cardButtons" destination="Bdj-oN-xeW" id="zkc-ef-4el"/>
                         <outletCollection property="cardButtons" destination="Obz-JY-K6z" id="Gty-9X-RVX"/>
