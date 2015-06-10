@@ -374,7 +374,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DuZ-0g-jPo">
-                                <rect key="frame" x="18" y="376" width="284" height="21"/>
+                                <rect key="frame" x="18" y="461" width="284" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -388,13 +388,13 @@
                             <constraint firstItem="45z-68-uRg" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="BoM-1q-q2M"/>
                             <constraint firstItem="asN-IY-5pc" firstAttribute="leading" secondItem="LZK-Mf-K12" secondAttribute="trailing" constant="3" id="FVS-pl-bUh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DuZ-0g-jPo" secondAttribute="trailing" constant="4" id="Pns-cn-23h"/>
-                            <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="45z-68-uRg" secondAttribute="bottom" constant="4" id="RtT-XM-vOD"/>
                             <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="asN-IY-5pc" secondAttribute="bottom" constant="3" id="Xmf-g5-PEv"/>
                             <constraint firstItem="DuZ-0g-jPo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="4" id="haR-fP-zLG"/>
+                            <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="DuZ-0g-jPo" secondAttribute="bottom" constant="86" id="iOa-kl-BHS"/>
                             <constraint firstItem="QaA-Ou-mjm" firstAttribute="top" secondItem="LZK-Mf-K12" secondAttribute="bottom" constant="8" id="mNE-pe-Ayg"/>
-                            <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="DuZ-0g-jPo" secondAttribute="bottom" constant="180" id="rFQ-4W-d7D"/>
                             <constraint firstAttribute="trailing" secondItem="QaA-Ou-mjm" secondAttribute="trailing" constant="16" id="umT-2N-uMg"/>
                             <constraint firstItem="DuZ-0g-jPo" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="2" id="vfP-Bj-o1h"/>
+                            <constraint firstItem="muK-kZ-yTX" firstAttribute="top" secondItem="45z-68-uRg" secondAttribute="bottom" constant="8" id="yNW-jb-4E2"/>
                         </constraints>
                     </view>
                     <connections>
