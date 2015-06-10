@@ -18,6 +18,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
 @property (strong, nonatomic) IBOutlet UILabel *displayResult;
+@property (strong, nonatomic) NSMutableArray *resultsLog;
 
 
 @end
@@ -37,6 +38,14 @@
         self.threeCardMatchMode.on = NO;
     }
     return _game;
+}
+
+ - (NSMutableArray *)resultsLog
+{
+    if (!_resultsLog) {
+        _resultsLog = [[NSMutableArray alloc] init];
+    }
+    return _resultsLog;
 }
 
 - (IBAction)touchCardButton:(UIButton *)sender
@@ -74,6 +83,9 @@
             Card *onlyCard = [[self.game.choicesAndResult firstObject] firstObject];
             self.displayResult.text = [NSString stringWithFormat:@"You chose %@, 0 points", onlyCard.contents];
         }
+        [self.resultsLog addObject:self.displayResult.text];
+        self.game.choicesAndResult = nil;
+        NSLog(@"%@", [self.resultsLog lastObject]);
     }
 }
 
