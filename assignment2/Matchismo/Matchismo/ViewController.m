@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "PlayingCard.h"
 #import "PlayingCardDeck.h"
 #import "CardMatchingGame.h"
 
@@ -18,6 +17,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *scoreLabel;
 @property (strong, nonatomic) IBOutlet UISwitch *threeCardMatchMode;
 @property (strong, nonatomic) IBOutlet UILabel *displayResult;
+@property (strong, nonatomic) NSMutableArray *resultsLog;
+@property (strong, nonatomic) IBOutlet UISlider *rewindSlider;
 
 
 @end
@@ -39,9 +40,17 @@
     return _game;
 }
 
+ - (NSMutableArray *)resultsLog
+{
+    if (!_resultsLog) {
+        _resultsLog = [[NSMutableArray alloc] init];
+    }
+    return _resultsLog;
+}
+
 - (IBAction)touchCardButton:(UIButton *)sender
 {
-    int chosenButtonIndex = [self.cardButtons indexOfObject:sender];
+    int chosenButtonIndex = (int)[self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex withThreeCardMatchMode:self.threeCardMatchMode.isOn];
     [self updateUI];
 }
@@ -49,12 +58,12 @@
 - (void)updateUI
 {
     for (UIButton *cardButton in self.cardButtons) {
-        int cardButtonIndex = [self.cardButtons indexOfObject:cardButton];
+        int cardButtonIndex = (int)[self.cardButtons indexOfObject:cardButton];
         Card *card = [self.game cardAtIndex:cardButtonIndex];
         [cardButton setTitle:[self titleForCard:card] forState:UIControlStateNormal];
         [cardButton setBackgroundImage:[self backgroundImageForCard:card] forState:UIControlStateNormal];
         cardButton.enabled = !card.isMatched;
-        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %d", self.game.score];
+        self.scoreLabel.text = [NSString stringWithFormat:@"Score: %ld", (long)self.game.score];
     }
     if (self.game.choicesAndResult) {
         
@@ -74,6 +83,11 @@
             Card *onlyCard = [[self.game.choicesAndResult firstObject] firstObject];
             self.displayResult.text = [NSString stringWithFormat:@"You chose %@, 0 points", onlyCard.contents];
         }
+        self.displayResult.backgroundColor = nil;
+        [self.resultsLog addObject:self.displayResult.text];
+        self.game.choicesAndResult = nil;
+        self.rewindSlider.maximumValue = [self.resultsLog count];
+        self.rewindSlider.value = self.rewindSlider.maximumValue;
     }
 }
 
@@ -87,6 +101,13 @@
     return [UIImage imageNamed:card.isChosen ? @"cardfront" : @"cardback"];
 }
 
+- (IBAction)touchRewindSlider:(id)sender
+{
+    int resultsLogIndex = self.rewindSlider.value;
+    self.displayResult.text = [NSString stringWithFormat:@"%@", [self.resultsLog objectAtIndex:resultsLogIndex]];
+    self.displayResult.backgroundColor = [UIColor lightGrayColor];
+}
+
 - (IBAction)touchReDealButton:(UIButton *)sender
 {
     self.scoreLabel.text = @"Score: 0";
@@ -96,7 +117,9 @@
         cardButton.enabled = YES;
     }
     self.game = nil;
+    self.resultsLog = nil;
     self.threeCardMatchMode.on = YES;
+    self.rewindSlider.value = 0;
     self.displayResult.text = @"";
 }
 
