@@ -84,6 +84,7 @@
             Card *onlyCard = [[self.game.choicesAndResult firstObject] firstObject];
             self.displayResult.text = [NSString stringWithFormat:@"You chose %@, 0 points", onlyCard.contents];
         }
+        self.displayResult.backgroundColor = nil;
         [self.resultsLog addObject:self.displayResult.text];
         self.game.choicesAndResult = nil;
         self.rewindSlider.maximumValue = [self.resultsLog count];
@@ -103,6 +104,9 @@
 
 - (IBAction)touchRewindSlider:(id)sender
 {
+    int resultsLogIndex = self.rewindSlider.value;
+    self.displayResult.text = [NSString stringWithFormat:@"%@", [self.resultsLog objectAtIndex:resultsLogIndex]];
+    self.displayResult.backgroundColor = [UIColor lightGrayColor];
 }
 
 - (IBAction)touchReDealButton:(UIButton *)sender
