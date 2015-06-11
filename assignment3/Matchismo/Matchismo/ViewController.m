@@ -102,6 +102,9 @@
 - (IBAction)touchRewindSlider:(id)sender
 {
     int resultsLogIndex = self.rewindSlider.value;
+    if (resultsLogIndex >= [self.resultsLog count]) {
+        resultsLogIndex = (int)[self.resultsLog count] -1;
+    }
     self.displayResult.text = [NSString stringWithFormat:@"%@", [self.resultsLog objectAtIndex:resultsLogIndex]];
     self.displayResult.backgroundColor = [UIColor lightGrayColor];
 }

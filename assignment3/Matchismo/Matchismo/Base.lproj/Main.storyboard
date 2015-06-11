@@ -593,6 +593,24 @@
             </objects>
             <point key="canvasLocation" x="324" y="431"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="84L-FT-fHE">
+            <objects>
+                <viewController id="fLl-1W-yvx" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Llc-I3-115"/>
+                        <viewControllerLayoutGuide type="bottom" id="aXM-J8-lmi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="gBJ-S8-9xv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="rb7-9t-WOr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="431"/>
+        </scene>
     </scenes>
     <resources>
         <image name="cardback" width="64" height="96"/>
