@@ -33,13 +33,13 @@
 // custom getter for contents
 - (NSString *)contents
 {
-    NSString *setCardContents = [[NSString alloc] init];
-    for (int i = 0; i <= self.number; i++) {
-        
+    NSMutableString *setCardContents = [[NSMutableString alloc] init];
+    for (int i = 1; i < self.number; i++) {
+        [setCardContents appendString:self.symbol];
     }
     
-    
-    
+    NSString *contents = [NSString stringWithFormat:@"%@", setCardContents];
+    return contents;
 }
 
 - (void)setSymbol:(NSString *)symbol
