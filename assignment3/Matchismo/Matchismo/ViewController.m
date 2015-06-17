@@ -50,6 +50,7 @@
     int chosenButtonIndex = (int)[self.cardButtons indexOfObject:sender];
     [self.game chooseCardAtIndex:chosenButtonIndex];
     [self updateUI];
+    NSLog(@"%@", [[self.game cardAtIndex:chosenButtonIndex] description]);
 }
 
 - (void)updateUI

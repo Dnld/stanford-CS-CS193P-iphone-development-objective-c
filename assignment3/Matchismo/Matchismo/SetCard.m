@@ -12,7 +12,7 @@
 
 + (NSArray *)validSymbols
 {
-    return @[@"▴", @"•", @"■"];
+    return @[@"◆", @"◼︎", @"▴"];
 }
 
 + (NSUInteger)maxNumber
@@ -34,7 +34,7 @@
 - (NSString *)contents
 {
     NSMutableString *setCardContents = [[NSMutableString alloc] init];
-    for (int i = 1; i < self.number; i++) {
+    for (int i = 1; i <= self.number; i++) {
         [setCardContents appendString:self.symbol];
     }
     
@@ -68,6 +68,12 @@
     if ([[SetCard validShadings] containsObject:shading]) {
         _shading = shading;
     }
+}
+
+// custom description for debugging
+- (NSString *)description
+{
+    return [NSString stringWithFormat:@"%@ %lul %@ %@", self.symbol, (unsigned long)self.number, self.color, self.shading];
 }
 
 @end
